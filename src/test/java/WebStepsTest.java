@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Шаги с аннотацией @Step")
-public class WebStepsTest extends TestBase{
+public class WebStepsTest extends TestBase {
 
     @Test
     public void testGithubIssue() {
@@ -15,6 +15,7 @@ public class WebStepsTest extends TestBase{
         steps.querySetValueSubmit();
         steps.hrefClick();
         steps.issuesClick();
+        steps.issuesShouldHave();
 
     }
 }

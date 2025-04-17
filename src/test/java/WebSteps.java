@@ -1,5 +1,6 @@
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -20,13 +21,18 @@ public class WebSteps {
     }
 
     @Step("Найдем проект elinamarsona/demoqa34_junit")
-    public void hrefClick(){
+    public void hrefClick() {
         $("[href='/elinamarsona/demoqa34_junit']").click();
     }
 
     @Step("Кликаем на таб Issues")
     public void issuesClick() {
         $("[data-content=Issues]").click();
+    }
+
+    @Step("Проверяем в репозитории название Issues")
+    public void issuesShouldHave() {
+        $("#issues-tab").shouldHave(text("ISSUE"));
     }
 
 }
